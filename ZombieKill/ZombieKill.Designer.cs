@@ -1,6 +1,6 @@
-﻿namespace GhostBowling
+﻿namespace ZombieKill
 {
-    partial class GhostBowlingForm
+    partial class ZombieKillForm
     {
         // Required designer variable.
         private System.ComponentModel.IContainer components = null;
@@ -23,8 +23,8 @@
         // the contents of this method with the code editor.
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GhostBowlingForm));
-            this.bowl = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ZombieKillForm));
+            this.throwKnife = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.message = new System.Windows.Forms.Label();
@@ -37,7 +37,7 @@
             this.totalScore = new System.Windows.Forms.Label();
             this.winLose = new System.Windows.Forms.Label();
             this.tryLuck = new System.Windows.Forms.Button();
-            this.setTheBall = new System.Windows.Forms.Button();
+            this.setknife = new System.Windows.Forms.Button();
             this.playAgain = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -46,18 +46,18 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // bowl
+            // throwKnife
             // 
-            this.bowl.BackColor = System.Drawing.SystemColors.Highlight;
-            this.bowl.FlatAppearance.BorderSize = 3;
-            this.bowl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bowl.Location = new System.Drawing.Point(332, 485);
-            this.bowl.Name = "bowl";
-            this.bowl.Size = new System.Drawing.Size(231, 57);
-            this.bowl.TabIndex = 3;
-            this.bowl.Text = "Bowl";
-            this.bowl.UseVisualStyleBackColor = false;
-            this.bowl.Click += new System.EventHandler(this.Bowl_Click);
+            this.throwKnife.BackColor = System.Drawing.SystemColors.Highlight;
+            this.throwKnife.FlatAppearance.BorderSize = 3;
+            this.throwKnife.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.throwKnife.Location = new System.Drawing.Point(332, 485);
+            this.throwKnife.Name = "throwKnife";
+            this.throwKnife.Size = new System.Drawing.Size(231, 57);
+            this.throwKnife.TabIndex = 3;
+            this.throwKnife.Text = "Throw Knife";
+            this.throwKnife.UseVisualStyleBackColor = false;
+            this.throwKnife.Click += new System.EventHandler(this.ThrowKnife_Click);
             // 
             // panel1
             // 
@@ -85,7 +85,7 @@
             this.message.Name = "message";
             this.message.Size = new System.Drawing.Size(865, 52);
             this.message.TabIndex = 1;
-            this.message.Text = "Welcome to the Game!!";
+            this.message.Text = "Welcome to Kill Zombie Game!!";
             this.message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
@@ -181,18 +181,18 @@
             this.tryLuck.UseVisualStyleBackColor = false;
             this.tryLuck.Click += new System.EventHandler(this.TryLuck_Click);
             // 
-            // setTheBall
+            // setknife
             // 
-            this.setTheBall.BackColor = System.Drawing.SystemColors.Highlight;
-            this.setTheBall.FlatAppearance.BorderSize = 3;
-            this.setTheBall.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.setTheBall.Location = new System.Drawing.Point(59, 13);
-            this.setTheBall.Name = "setTheBall";
-            this.setTheBall.Size = new System.Drawing.Size(125, 38);
-            this.setTheBall.TabIndex = 0;
-            this.setTheBall.Text = "Set The Ball";
-            this.setTheBall.UseVisualStyleBackColor = false;
-            this.setTheBall.Click += new System.EventHandler(this.SetTheBall_Click);
+            this.setknife.BackColor = System.Drawing.SystemColors.Highlight;
+            this.setknife.FlatAppearance.BorderSize = 3;
+            this.setknife.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.setknife.Location = new System.Drawing.Point(59, 13);
+            this.setknife.Name = "setknife";
+            this.setknife.Size = new System.Drawing.Size(125, 38);
+            this.setknife.TabIndex = 0;
+            this.setknife.Text = "Set Knife";
+            this.setknife.UseVisualStyleBackColor = false;
+            this.setknife.Click += new System.EventHandler(this.SetKnife_Click);
             // 
             // playAgain
             // 
@@ -210,14 +210,14 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.playAgain);
-            this.panel2.Controls.Add(this.setTheBall);
+            this.panel2.Controls.Add(this.setknife);
             this.panel2.Controls.Add(this.tryLuck);
             this.panel2.Location = new System.Drawing.Point(624, 31);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(271, 213);
             this.panel2.TabIndex = 7;
             // 
-            // GhostBowlingForm
+            // ZombieKillForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -227,11 +227,11 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.message);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.bowl);
+            this.Controls.Add(this.throwKnife);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "GhostBowlingForm";
-            this.Text = "Ghost Bowling";
-            this.Load += new System.EventHandler(this.GhostBowlingForm_Load);
+            this.Name = "ZombieKillForm";
+            this.Text = "Kill Zombie";
+            this.Load += new System.EventHandler(this.ZombieKillForm_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -242,7 +242,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button bowl;
+        private System.Windows.Forms.Button throwKnife;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label message;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -255,7 +255,7 @@
         private System.Windows.Forms.Label lose;
         private System.Windows.Forms.Label win;
         private System.Windows.Forms.Button tryLuck;
-        private System.Windows.Forms.Button setTheBall;
+        private System.Windows.Forms.Button setknife;
         private System.Windows.Forms.Button playAgain;
         private System.Windows.Forms.Panel panel2;
     }

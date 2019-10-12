@@ -3,10 +3,10 @@ using System.Drawing;
 using System.Media;
 using System.Windows.Forms;
 
-namespace GhostBowling
+namespace ZombieKill
 {
     // GhostBowlingForm class definition inheriting Form class
-    public partial class GhostBowlingForm : Form
+    public partial class ZombieKillForm : Form
     {
         // Class Reference variables to be used
         // within below defined functions to access
@@ -17,7 +17,7 @@ namespace GhostBowling
 
         // Contructor for initializing the Form
         // and assign object reference to Class variables
-        public GhostBowlingForm()
+        public ZombieKillForm()
         {
             InitializeComponent();
             player = new Player();
@@ -28,34 +28,34 @@ namespace GhostBowling
         // Function for loading the Form
         // having alteration for specific form components
         // before actual form load
-        private void GhostBowlingForm_Load(object sender, EventArgs e)
+        private void ZombieKillForm_Load(object sender, EventArgs e)
         {
             tryLuck.Enabled = false;                // disabled Try Luck button
             playAgain.Enabled = false;              // disabled Play Again button
-            bowl.Enabled = false;                   // disabled Bowl button
-            setTheBall.Enabled = true;              // enabled Set The Ball button
+            throwKnife.Enabled = false;                   // disabled Bowl button
+            setknife.Enabled = true;              // enabled Set The Ball button
         }
 
-        // This function generates a random number between 0-5 and passes to SetTheBall function
+        // This function generates a random number between 0-5 and passes to SetKnife function
         // of Player class. Also, checks if the value is assigned or not via return type(true/false)
         //  and plays sound for setting the ball.
-        private void SetTheBall_Click(object sender, EventArgs e)
+        private void SetKnife_Click(object sender, EventArgs e)
         {
-            setTheBall.Enabled = false;             // Once Set The Ball button is clicked
+            setknife.Enabled = false;             // Once Set The Ball button is clicked
             tryLuck.Enabled = true;                 // it gets disabled and rest other buttons
             playAgain.Enabled = true;               // will be enabled
-            bowl.Enabled = true;
-            if (player.SetTheBall(random.Next(0, 6)) == false)         // Next function takes min and max(exclusive)
-            {                                                           // values to generated randome numbers.
-                message.Text = "Error while setting up ball.. Try again!!";   // Message to be displayed if any error
-                setTheBall.Enabled = true;                              // occurs while assigning random number.
+            throwKnife.Enabled = true;
+            if (player.SetKnife(random.Next(0, 6)) == false)         // Next function takes min and max(exclusive)
+            {                                                           // values to generated random numbers.
+                message.Text = "Error while setting up knife.. Try again!!";   // Message to be displayed if any error
+                setknife.Enabled = true;                              // occurs while assigning random number.
             }
             else
             {
-                pictureBox1.Image = Image.FromFile(@"Resource\GhostBowling.jpg");
-                soundPlayer.SoundLocation = @"Resource\SetBallSound.wav";    // Loading audio from Resource folder location
+                pictureBox1.Image = Image.FromFile(@"Resource\KillZombie.jpg");
+                soundPlayer.SoundLocation = @"Resource\SetKnife.wav";    // Loading audio from Resource folder location
                 soundPlayer.Play();                                         // and playing in new thread via Play().
-                message.Text = "Ball is set now!!";
+                message.Text = "Knife is set now!!";
             }
         }
 
@@ -78,35 +78,35 @@ namespace GhostBowling
         // If both are equal then all the ghosts will be gone.
         // Else the player loses a chance or be dead if no chances are left.
         // Calculation of total win/lose points and total score for overall game session.
-        private void Bowl_Click(object sender, EventArgs e)
+        private void ThrowKnife_Click(object sender, EventArgs e)
         {
-            player.Bowl();
+            player.ThrowKnife();
             if (player.chance == -3)                                        // Specific chance value -3 to be 
             {                                                               // checked for win case
-                soundPlayer.SoundLocation = @"Resource\GhostBowlingWinSound.wav";
+                soundPlayer.SoundLocation = @"Resource\KillZombieWinSound.wav";
                 soundPlayer.Play();                                         // Plays Bowling win sound.
                 win.Text = player.totalWins + "";                           // Sets win points on the win label.
-                pictureBox1.Image = Image.FromFile(@"Resource\GhostBowlingWin.jpg");
-                message.Text = "Whoa!!... You killed all the Ghosts...Wanna Play Again?";
-                setTheBall.Enabled = false;
+                pictureBox1.Image = Image.FromFile(@"Resource\KillZombieWin.jpg");
+                message.Text = "Congrats!!... You killed the Zombie...Wanna Play Again?";
+                setknife.Enabled = false;
                 tryLuck.Enabled = false;
-                bowl.Enabled = false;
+                throwKnife.Enabled = false;
             }
             else if (player.chance == 0)                                    // For Game lose case check chance
             {                                                               // value to be 0.
                 lose.Text = player.totalLoses + "";                         // Sets lose points on the lose label.
-                pictureBox1.Image = Image.FromFile(@"Resource\GhostBowlingNoChance.jpg");
+                pictureBox1.Image = Image.FromFile(@"Resource\KillZombie.jpg");
                 message.Text = "You are dead... Click Play Again or close the window";
-                setTheBall.Enabled = false;
+                setknife.Enabled = false;
                 tryLuck.Enabled = false;
-                bowl.Enabled = false;
-                soundPlayer.SoundLocation = @"Resource\GhostBowlingSpookySound.wav";
+                throwKnife.Enabled = false;
+                soundPlayer.SoundLocation = @"Resource\ZombieWins.wav";
                 soundPlayer.Play();
             }
             else                                                          // Remaining chance case where number of chance
             {                                                             // is still left for the player.
-                pictureBox1.Image = Image.FromFile(@"Resource\GhostBowlingLastChance.jpg");
-                soundPlayer.SoundLocation = @"Resource\BowlingSound.wav";
+                pictureBox1.Image = Image.FromFile(@"Resource\KillZombie1Chance.jpg");
+                soundPlayer.SoundLocation = @"Resource\Throw.wav";
                 soundPlayer.Play();
                 message.Text = "You missed ..." + player.chance + " more chance left.."; // Displays number of chance left.
             }
@@ -119,12 +119,12 @@ namespace GhostBowling
         // picture box.
         private void PlayAgain_Click(object sender, EventArgs e)
         {
-            message.Text = "Welcome to the Ghost Bowling!!";
-            pictureBox1.Image = Image.FromFile(@"Resource\GhostBowlingWelcome.jpg");
-            setTheBall.Enabled = true;
+            message.Text = "Welcome to Kill Zombie Game!!";
+            pictureBox1.Image = Image.FromFile(@"Resource\KillZombieWelcome.jpg");
+            setknife.Enabled = true;
             tryLuck.Enabled = false;
             playAgain.Enabled = false;
-            bowl.Enabled = false;
+            throwKnife.Enabled = false;
         }
 
 

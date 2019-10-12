@@ -16,8 +16,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4085644B-D8F0-491F-B28F-C9223088010D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>GhostBowling</RootNamespace>
-    <AssemblyName>GhostBowling</AssemblyName>
+    <RootNamespace>ZombieKill</RootNamespace>
+    <AssemblyName>ZombieKill</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -68,7 +68,7 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <StartupObject>GhostBowling.Program</StartupObject>
+    <StartupObject>ZombieKill.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -131,17 +131,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GhostBowling.cs">
+    <Compile Include="ZombieKill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GhostBowling.Designer.cs">
-      <DependentUpon>GhostBowling.cs</DependentUpon>
+    <Compile Include="ZombieKill.Designer.cs">
+      <DependentUpon>ZombieKill.cs</DependentUpon>
     </Compile>
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GhostBowling.resx">
-      <DependentUpon>GhostBowling.cs</DependentUpon>
+    <EmbeddedResource Include="ZombieKill.resx">
+      <DependentUpon>ZombieKill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -192,34 +192,34 @@
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.3\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resource\BowlingSound.wav">
+    <Content Include="Resource\KillZombie.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resource\GhostBowling.jpg">
+    <Content Include="Resource\KillZombie1Chance.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resource\GhostBowlingLastChance.jpg">
+    <Content Include="Resource\KillZombieWelcome.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resource\GhostBowlingNoChance.jpg">
+    <Content Include="Resource\KillZombieWin.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resource\GhostBowlingSpookySound.wav">
+    <Content Include="Resource\KillZombieWin1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resource\GhostBowlingWelcome.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resource\GhostBowlingWin.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resource\GhostBowlingWinSound.wav">
+    <Content Include="Resource\KillZombieWinSound.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resource\LuckButtonSound.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resource\SetBallSound.wav">
+    <Content Include="Resource\SetKnife.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\Throw.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\ZombieWins.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

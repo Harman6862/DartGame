@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GhostBowling.Properties {
+namespace ZombieKill.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
