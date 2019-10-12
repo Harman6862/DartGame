@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace ZombieKill
 {
-    // GhostBowlingForm class definition inheriting Form class
+    // GhostThrow KnifeingForm class definition inheriting Form class
     public partial class ZombieKillForm : Form
     {
         // Class Reference variables to be used
@@ -32,16 +32,16 @@ namespace ZombieKill
         {
             tryLuck.Enabled = false;                // disabled Try Luck button
             playAgain.Enabled = false;              // disabled Play Again button
-            throwKnife.Enabled = false;                   // disabled Bowl button
-            setknife.Enabled = true;              // enabled Set The Ball button
+            throwKnife.Enabled = false;            // disabled Throw Knife button
+            setknife.Enabled = true;              // enabled Set Knife button
         }
 
         // This function generates a random number between 0-5 and passes to SetKnife function
         // of Player class. Also, checks if the value is assigned or not via return type(true/false)
-        //  and plays sound for setting the ball.
+        //  and plays sound for setting the knife.
         private void SetKnife_Click(object sender, EventArgs e)
         {
-            setknife.Enabled = false;             // Once Set The Ball button is clicked
+            setknife.Enabled = false;             // Once Set Knife button is clicked
             tryLuck.Enabled = true;                 // it gets disabled and rest other buttons
             playAgain.Enabled = true;               // will be enabled
             throwKnife.Enabled = true;
@@ -70,12 +70,12 @@ namespace ZombieKill
             {
                 soundPlayer.SoundLocation = @"Resource\LuckButtonSound.wav";
                 soundPlayer.Play();
-                message.Text = "Luck set.. Bowl now";
+                message.Text = "Luck set.. Throw knife now";
             }
         }
 
-        // This function cross-checks the ball position and luck value.
-        // If both are equal then all the ghosts will be gone.
+        // This function cross-checks the knife position and luck value.
+        // If both are equal then the zombie will be killed.
         // Else the player loses a chance or be dead if no chances are left.
         // Calculation of total win/lose points and total score for overall game session.
         private void ThrowKnife_Click(object sender, EventArgs e)
@@ -84,7 +84,7 @@ namespace ZombieKill
             if (player.chance == -3)                                        // Specific chance value -3 to be 
             {                                                               // checked for win case
                 soundPlayer.SoundLocation = @"Resource\KillZombieWinSound.wav";
-                soundPlayer.Play();                                         // Plays Bowling win sound.
+                soundPlayer.Play();                                         // Plays win sound.
                 win.Text = player.totalWins + "";                           // Sets win points on the win label.
                 pictureBox1.Image = Image.FromFile(@"Resource\KillZombieWin.jpg");
                 message.Text = "Congrats!!... You killed the Zombie...Wanna Play Again?";
@@ -95,7 +95,7 @@ namespace ZombieKill
             else if (player.chance == 0)                                    // For Game lose case check chance
             {                                                               // value to be 0.
                 lose.Text = player.totalLoses + "";                         // Sets lose points on the lose label.
-                pictureBox1.Image = Image.FromFile(@"Resource\KillZombie.jpg");
+                pictureBox1.Image = Image.FromFile(@"Resource\KillZombieWelcome.jpg");
                 message.Text = "You are dead... Click Play Again or close the window";
                 setknife.Enabled = false;
                 tryLuck.Enabled = false;
@@ -114,7 +114,7 @@ namespace ZombieKill
         }
 
         // This function resets the form components such as
-        // enabling only Set The Ball button and disabling the rest.
+        // enabling only Set Knife button and disabling the rest.
         // Resets the welcome message and image on 
         // picture box.
         private void PlayAgain_Click(object sender, EventArgs e)
@@ -126,8 +126,5 @@ namespace ZombieKill
             playAgain.Enabled = false;
             throwKnife.Enabled = false;
         }
-
-
-
     }
 }
