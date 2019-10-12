@@ -30,9 +30,9 @@ namespace GhostBowling
         // before actual form load
         private void GhostBowlingForm_Load(object sender, EventArgs e)
         {
-            spinChambers.Enabled = false;           // disabled Spin Chambers button
+            tryLuck.Enabled = false;           // disabled Spin Chambers button
             playAgain.Enabled = false;              // disabled Play Again button
-            fire.Enabled = false;                   // disabled Bowl button
+            bowl.Enabled = false;                   // disabled Bowl button
             setTheBall.Enabled = true;              // enabled Load Bullet button
         }
 
@@ -42,19 +42,20 @@ namespace GhostBowling
         private void SetTheBall_Click(object sender, EventArgs e)
         {
             setTheBall.Enabled = false;             // Once the Load Bullet button is clicked
-            spinChambers.Enabled = true;            // it gets disabled and rest other buttons
+            tryLuck.Enabled = true;            // it gets disabled and rest other buttons
             playAgain.Enabled = true;               // will be enabled
-            fire.Enabled = true;
+            bowl.Enabled = true;
             if (player.SetTheBall(random.Next(0, 6)) == false)         // Next function takes min and max(exclusive)
             {                                                           // values to generated randome numbers.
-                message.Text = "Error Loading Bullets.. Try again!!";   // Message to be displayed if any error
+                message.Text = "Error while setting up ball.. Try again!!";   // Message to be displayed if any error
                 setTheBall.Enabled = true;                              // occurs while assigning random number.
             }
             else
             {
-                soundPlayer.SoundLocation = @"Resource\SetTheBall.wav";    // Loading audio from Resource folder location
+                pictureBox1.Image = Image.FromFile(@"Resource\GhostBowling.jpg");
+                soundPlayer.SoundLocation = @"Resource\SetBallSound.wav";    // Loading audio from Resource folder location
                 soundPlayer.Play();                                         // and playing in new thread via Play().
-                message.Text = "Bullet Loaded Successfully!!";
+                message.Text = "Ball is set now!!";
             }
         }
 
@@ -64,12 +65,12 @@ namespace GhostBowling
         private void TryLuck_Click(object sender, EventArgs e)
         {
             if (player.TryLuck(random.Next(0, 6)) == false)                  // Message to be displayed if any error
-                message.Text = "OOps Spinning the chamber failed.. Try again!!";  // occurs while assigning random number
+                message.Text = "Unable to spin your luck.. Try again!!";  // occurs while assigning random number
             else
             {
-                soundPlayer.SoundLocation = @"Resource\TryLuck.wav";
+                soundPlayer.SoundLocation = @"Resource\LuckButtonSound.wav";
                 soundPlayer.Play();
-                message.Text = "Chambers Spinned.. Try your luck now";
+                message.Text = "Luck set.. Bowl now";
             }
         }
 
@@ -82,28 +83,29 @@ namespace GhostBowling
             player.Bowl();
             if (player.chance == -3)                                        // Specific chance value -3 to be 
             {                                                               // checked for win case
-                soundPlayer.SoundLocation = @"Resource\GunBulletBowl.wav";
+                soundPlayer.SoundLocation = @"Resource\GhostBowlingWinSound.wav";
                 soundPlayer.Play();                                         // Plays gun bullet fire sound.
                 win.Text = player.totalWins + "";                           // Sets win points on the win label.
-                pictureBox1.Image = Image.FromFile(@"Resource\KilledMonster.jpg");
-                message.Text = "Great!!... You killed the monster...Wanna Play Again?";
+                pictureBox1.Image = Image.FromFile(@"Resource\GhostBowlingWin.jpg");
+                message.Text = "Whoa!!... You killed all the Ghosts...Wanna Play Again?";
                 setTheBall.Enabled = false;
-                spinChambers.Enabled = false;
-                fire.Enabled = false;
+                tryLuck.Enabled = false;
+                bowl.Enabled = false;
             }
             else if (player.chance == 0)                                    // For Game lose case check chance
             {                                                               // value to be 0.
                 lose.Text = player.totalLoses + "";                           // Sets lose points on the lose label.
                 message.Text = "You are dead... Click Play Again or close the window";
                 setTheBall.Enabled = false;
-                spinChambers.Enabled = false;
-                fire.Enabled = false;
-                soundPlayer.SoundLocation = @"Resource\mario_death.wav";
+                tryLuck.Enabled = false;
+                bowl.Enabled = false;
+                soundPlayer.SoundLocation = @"Resource\GhostBowlingSpookySound.wav";
                 soundPlayer.Play();
             }
             else                                                          // Remaining chance case where number of chance
             {                                                             // is still left for the player.
-                soundPlayer.SoundLocation = @"Resource\GunBulletBowl.wav";
+                pictureBox1.Image = Image.FromFile(@"Resource\GhostBowling1Chance.jpg");
+                soundPlayer.SoundLocation = @"Resource\BowlingSound.wav";
                 soundPlayer.Play();
                 message.Text = "You missed ..." + player.chance + " more chance left.."; // Displays number of chance left.
             }
@@ -116,12 +118,12 @@ namespace GhostBowling
         // picture box.
         private void PlayAgain_Click(object sender, EventArgs e)
         {
-            message.Text = "Welcome to the Game!!";
-            pictureBox1.Image = Image.FromFile(@"Resource\Monster.jpg");
+            message.Text = "Welcome to the Ghost Bowling!!";
+            pictureBox1.Image = Image.FromFile(@"Resource\GhostBowlingWelcome.jpg");
             setTheBall.Enabled = true;
-            spinChambers.Enabled = false;
+            tryLuck.Enabled = false;
             playAgain.Enabled = false;
-            fire.Enabled = false;
+            bowl.Enabled = false;
         }
 
 

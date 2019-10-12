@@ -24,7 +24,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GhostBowlingForm));
-            this.fire = new System.Windows.Forms.Button();
+            this.bowl = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.message = new System.Windows.Forms.Label();
@@ -36,7 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.totalScore = new System.Windows.Forms.Label();
             this.winLose = new System.Windows.Forms.Label();
-            this.spinChambers = new System.Windows.Forms.Button();
+            this.tryLuck = new System.Windows.Forms.Button();
             this.setTheBall = new System.Windows.Forms.Button();
             this.playAgain = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -46,16 +46,18 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // fire
+            // bowl
             // 
-            this.fire.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fire.Location = new System.Drawing.Point(332, 485);
-            this.fire.Name = "fire";
-            this.fire.Size = new System.Drawing.Size(311, 57);
-            this.fire.TabIndex = 3;
-            this.fire.Text = "Bowl";
-            this.fire.UseVisualStyleBackColor = true;
-            this.fire.Click += new System.EventHandler(this.Bowl_Click);
+            this.bowl.BackColor = System.Drawing.SystemColors.Highlight;
+            this.bowl.FlatAppearance.BorderSize = 3;
+            this.bowl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bowl.Location = new System.Drawing.Point(332, 485);
+            this.bowl.Name = "bowl";
+            this.bowl.Size = new System.Drawing.Size(231, 57);
+            this.bowl.TabIndex = 3;
+            this.bowl.Text = "Bowl";
+            this.bowl.UseVisualStyleBackColor = false;
+            this.bowl.Click += new System.EventHandler(this.Bowl_Click);
             // 
             // panel1
             // 
@@ -78,6 +80,7 @@
             // message
             // 
             this.message.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.message.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.message.Location = new System.Drawing.Point(30, 415);
             this.message.Name = "message";
             this.message.Size = new System.Drawing.Size(865, 52);
@@ -102,6 +105,7 @@
             // lose
             // 
             this.lose.AutoSize = true;
+            this.lose.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lose.Location = new System.Drawing.Point(196, 26);
             this.lose.Name = "lose";
             this.lose.Size = new System.Drawing.Size(16, 17);
@@ -111,6 +115,7 @@
             // win
             // 
             this.win.AutoSize = true;
+            this.win.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.win.Location = new System.Drawing.Point(144, 26);
             this.win.Name = "win";
             this.win.Size = new System.Drawing.Size(16, 17);
@@ -120,6 +125,7 @@
             // score
             // 
             this.score.AutoSize = true;
+            this.score.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.score.Location = new System.Drawing.Point(168, 93);
             this.score.Name = "score";
             this.score.Size = new System.Drawing.Size(16, 17);
@@ -145,6 +151,7 @@
             // totalScore
             // 
             this.totalScore.AutoSize = true;
+            this.totalScore.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.totalScore.Location = new System.Drawing.Point(13, 93);
             this.totalScore.Name = "totalScore";
             this.totalScore.Size = new System.Drawing.Size(89, 17);
@@ -154,26 +161,31 @@
             // winLose
             // 
             this.winLose.AutoSize = true;
+            this.winLose.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.winLose.Location = new System.Drawing.Point(13, 26);
             this.winLose.Name = "winLose";
             this.winLose.Size = new System.Drawing.Size(101, 17);
             this.winLose.TabIndex = 0;
             this.winLose.Text = "Wins / Loses : ";
             // 
-            // spinChambers
+            // tryLuck
             // 
-            this.spinChambers.BackColor = System.Drawing.SystemColors.Highlight;
-            this.spinChambers.Location = new System.Drawing.Point(59, 81);
-            this.spinChambers.Name = "spinChambers";
-            this.spinChambers.Size = new System.Drawing.Size(125, 38);
-            this.spinChambers.TabIndex = 4;
-            this.spinChambers.Text = "Try Luck";
-            this.spinChambers.UseVisualStyleBackColor = false;
-            this.spinChambers.Click += new System.EventHandler(this.TryLuck_Click);
+            this.tryLuck.BackColor = System.Drawing.SystemColors.Highlight;
+            this.tryLuck.FlatAppearance.BorderSize = 3;
+            this.tryLuck.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tryLuck.Location = new System.Drawing.Point(59, 81);
+            this.tryLuck.Name = "tryLuck";
+            this.tryLuck.Size = new System.Drawing.Size(125, 38);
+            this.tryLuck.TabIndex = 4;
+            this.tryLuck.Text = "Try Luck";
+            this.tryLuck.UseVisualStyleBackColor = false;
+            this.tryLuck.Click += new System.EventHandler(this.TryLuck_Click);
             // 
             // setTheBall
             // 
             this.setTheBall.BackColor = System.Drawing.SystemColors.Highlight;
+            this.setTheBall.FlatAppearance.BorderSize = 3;
+            this.setTheBall.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.setTheBall.Location = new System.Drawing.Point(59, 13);
             this.setTheBall.Name = "setTheBall";
             this.setTheBall.Size = new System.Drawing.Size(125, 38);
@@ -185,6 +197,8 @@
             // playAgain
             // 
             this.playAgain.BackColor = System.Drawing.SystemColors.Highlight;
+            this.playAgain.FlatAppearance.BorderSize = 3;
+            this.playAgain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playAgain.Location = new System.Drawing.Point(59, 151);
             this.playAgain.Name = "playAgain";
             this.playAgain.Size = new System.Drawing.Size(125, 38);
@@ -197,7 +211,7 @@
             // 
             this.panel2.Controls.Add(this.playAgain);
             this.panel2.Controls.Add(this.setTheBall);
-            this.panel2.Controls.Add(this.spinChambers);
+            this.panel2.Controls.Add(this.tryLuck);
             this.panel2.Location = new System.Drawing.Point(624, 31);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(271, 213);
@@ -213,7 +227,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.message);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.fire);
+            this.Controls.Add(this.bowl);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GhostBowlingForm";
             this.Text = "Ghost Bowling";
@@ -228,7 +242,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button fire;
+        private System.Windows.Forms.Button bowl;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label message;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -240,7 +254,7 @@
         private System.Windows.Forms.Label winLose;
         private System.Windows.Forms.Label lose;
         private System.Windows.Forms.Label win;
-        private System.Windows.Forms.Button spinChambers;
+        private System.Windows.Forms.Button tryLuck;
         private System.Windows.Forms.Button setTheBall;
         private System.Windows.Forms.Button playAgain;
         private System.Windows.Forms.Panel panel2;
