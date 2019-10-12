@@ -1,6 +1,6 @@
 ﻿namespace GhostBowling
 {
-    partial class GhostBowling
+    partial class GhostBowlingForm
     {
         // Required designer variable.
         private System.ComponentModel.IContainer components = null;
@@ -23,15 +23,11 @@
         // the contents of this method with the code editor.
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GhostBowling));
-            this.loadBullet = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GhostBowlingForm));
             this.fire = new System.Windows.Forms.Button();
-            this.spinChambers = new System.Windows.Forms.Button();
-            this.playAgain = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.message = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lose = new System.Windows.Forms.Label();
             this.win = new System.Windows.Forms.Label();
@@ -40,21 +36,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.totalScore = new System.Windows.Forms.Label();
             this.winLose = new System.Windows.Forms.Label();
+            this.spinChambers = new System.Windows.Forms.Button();
+            this.setTheBall = new System.Windows.Forms.Button();
+            this.playAgain = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // loadBullet
-            // 
-            this.loadBullet.Location = new System.Drawing.Point(59, 13);
-            this.loadBullet.Name = "loadBullet";
-            this.loadBullet.Size = new System.Drawing.Size(125, 38);
-            this.loadBullet.TabIndex = 0;
-            this.loadBullet.Text = "Load Bullet";
-            this.loadBullet.UseVisualStyleBackColor = true;
-            this.loadBullet.Click += new System.EventHandler(this.LoadBullet_Click);
             // 
             // fire
             // 
@@ -63,29 +53,9 @@
             this.fire.Name = "fire";
             this.fire.Size = new System.Drawing.Size(311, 57);
             this.fire.TabIndex = 3;
-            this.fire.Text = "Fire";
+            this.fire.Text = "Bowl";
             this.fire.UseVisualStyleBackColor = true;
-            this.fire.Click += new System.EventHandler(this.Fire_Click);
-            // 
-            // spinChambers
-            // 
-            this.spinChambers.Location = new System.Drawing.Point(59, 81);
-            this.spinChambers.Name = "spinChambers";
-            this.spinChambers.Size = new System.Drawing.Size(125, 38);
-            this.spinChambers.TabIndex = 4;
-            this.spinChambers.Text = "Spin Chambers";
-            this.spinChambers.UseVisualStyleBackColor = true;
-            this.spinChambers.Click += new System.EventHandler(this.SpinChambers_Click);
-            // 
-            // playAgain
-            // 
-            this.playAgain.Location = new System.Drawing.Point(59, 151);
-            this.playAgain.Name = "playAgain";
-            this.playAgain.Size = new System.Drawing.Size(125, 38);
-            this.playAgain.TabIndex = 5;
-            this.playAgain.Text = "Play Again";
-            this.playAgain.UseVisualStyleBackColor = true;
-            this.playAgain.Click += new System.EventHandler(this.PlayAgain_Click);
+            this.fire.Click += new System.EventHandler(this.Bowl_Click);
             // 
             // panel1
             // 
@@ -114,16 +84,6 @@
             this.message.TabIndex = 1;
             this.message.Text = "Welcome to the Game!!";
             this.message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.playAgain);
-            this.panel2.Controls.Add(this.loadBullet);
-            this.panel2.Controls.Add(this.spinChambers);
-            this.panel2.Location = new System.Drawing.Point(624, 31);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(271, 213);
-            this.panel2.TabIndex = 7;
             // 
             // panel3
             // 
@@ -200,10 +160,54 @@
             this.winLose.TabIndex = 0;
             this.winLose.Text = "Wins / Loses : ";
             // 
-            // KillMonsterForm
+            // spinChambers
+            // 
+            this.spinChambers.BackColor = System.Drawing.SystemColors.Highlight;
+            this.spinChambers.Location = new System.Drawing.Point(59, 81);
+            this.spinChambers.Name = "spinChambers";
+            this.spinChambers.Size = new System.Drawing.Size(125, 38);
+            this.spinChambers.TabIndex = 4;
+            this.spinChambers.Text = "Try Luck";
+            this.spinChambers.UseVisualStyleBackColor = false;
+            this.spinChambers.Click += new System.EventHandler(this.TryLuck_Click);
+            // 
+            // setTheBall
+            // 
+            this.setTheBall.BackColor = System.Drawing.SystemColors.Highlight;
+            this.setTheBall.Location = new System.Drawing.Point(59, 13);
+            this.setTheBall.Name = "setTheBall";
+            this.setTheBall.Size = new System.Drawing.Size(125, 38);
+            this.setTheBall.TabIndex = 0;
+            this.setTheBall.Text = "Set The Ball";
+            this.setTheBall.UseVisualStyleBackColor = false;
+            this.setTheBall.Click += new System.EventHandler(this.SetTheBall_Click);
+            // 
+            // playAgain
+            // 
+            this.playAgain.BackColor = System.Drawing.SystemColors.Highlight;
+            this.playAgain.Location = new System.Drawing.Point(59, 151);
+            this.playAgain.Name = "playAgain";
+            this.playAgain.Size = new System.Drawing.Size(125, 38);
+            this.playAgain.TabIndex = 5;
+            this.playAgain.Text = "Play Again";
+            this.playAgain.UseVisualStyleBackColor = false;
+            this.playAgain.Click += new System.EventHandler(this.PlayAgain_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.playAgain);
+            this.panel2.Controls.Add(this.setTheBall);
+            this.panel2.Controls.Add(this.spinChambers);
+            this.panel2.Location = new System.Drawing.Point(624, 31);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(271, 213);
+            this.panel2.TabIndex = 7;
+            // 
+            // GhostBowlingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(939, 554);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -211,26 +215,21 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.fire);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "KillMonsterForm";
-            this.Text = "Kill The Monster";
-            this.Load += new System.EventHandler(this.KillMonsterForm_Load);
+            this.Name = "GhostBowlingForm";
+            this.Text = "Ghost Bowling";
+            this.Load += new System.EventHandler(this.GhostBowlingForm_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button loadBullet;
         private System.Windows.Forms.Button fire;
-        private System.Windows.Forms.Button spinChambers;
-        private System.Windows.Forms.Button playAgain;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label message;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
@@ -241,6 +240,10 @@
         private System.Windows.Forms.Label winLose;
         private System.Windows.Forms.Label lose;
         private System.Windows.Forms.Label win;
+        private System.Windows.Forms.Button spinChambers;
+        private System.Windows.Forms.Button setTheBall;
+        private System.Windows.Forms.Button playAgain;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

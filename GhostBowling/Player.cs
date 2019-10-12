@@ -31,7 +31,7 @@ namespace GhostBowling
         // Assigns random number between 0-5 to bulletPosition.
         // Param - random, integer number from 0-5.
         // Return - Boolean, true if number is between 0 or 5; else false.
-        public Boolean LoadBullets(int random)
+        public Boolean SetTheBall(int random)
         {
             chance = 2;
             if (random < 0 || random > 5)
@@ -43,7 +43,7 @@ namespace GhostBowling
         // Assigns random number between 0-5 to spinValue.
         // Param - random, integer number from 0-5.
         // Return - Boolean, true if number is between 0 or 5; else false.
-        public Boolean SpinChambers(int random)
+        public Boolean TryLuck(int random)
         {
             if (random < 0 || random > 5)
                 return false;
@@ -55,7 +55,7 @@ namespace GhostBowling
         // total score by 10, assigns specific check value -3 to chance.
         // Else decrement chance by 1, and if no chance left(0)
         // increments lose points by 1.
-        public void Fire()
+        public void Bowl()
         {
             if (spinValue == bulletPosition)
             {
