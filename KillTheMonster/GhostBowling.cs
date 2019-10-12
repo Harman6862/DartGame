@@ -6,7 +6,7 @@ using System.Windows.Forms;
 namespace GhostBowling
 {
     // KillMonsterForm class definition inheriting Form class
-    public partial class GhostBowling : Form
+    public partial class GhostBowlingForm : Form
     {
         // Class Reference variables to be used
         // within below defined functions to access
@@ -17,7 +17,7 @@ namespace GhostBowling
 
         // Contructor for initializing the Form
         // and assign object reference to Class variables
-        public GhostBowling()
+        public GhostBowlingForm()
         {
             InitializeComponent();
             player = new Player();

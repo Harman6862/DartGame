@@ -18,7 +18,7 @@ namespace GhostBowling
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GhostBowling());
+            Application.Run(new GhostBowlingForm());
         }
     }
 }
