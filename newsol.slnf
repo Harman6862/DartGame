@@ -1,0 +1,8 @@
+{
+  "solution": {
+    "path": "GhostBowling.sln",
+    "projects": [
+      "KillTheMonster\\GhostBowling.csproj"
+    ]
+  }
+}

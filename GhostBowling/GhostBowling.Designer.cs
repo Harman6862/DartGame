@@ -1,6 +1,6 @@
-﻿namespace KillTheMonster
+﻿namespace GhostBowling
 {
-    partial class KillMonsterForm
+    partial class GhostBowling
     {
         // Required designer variable.
         private System.ComponentModel.IContainer components = null;
@@ -23,7 +23,7 @@
         // the contents of this method with the code editor.
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KillMonsterForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GhostBowling));
             this.loadBullet = new System.Windows.Forms.Button();
             this.fire = new System.Windows.Forms.Button();
             this.spinChambers = new System.Windows.Forms.Button();

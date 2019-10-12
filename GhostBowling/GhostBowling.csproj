@@ -16,8 +16,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4085644B-D8F0-491F-B28F-C9223088010D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>KillTheMonster</RootNamespace>
-    <AssemblyName>KillTheMonster</AssemblyName>
+    <RootNamespace>GhostBowling</RootNamespace>
+    <AssemblyName>GhostBowling</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -50,10 +50,10 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Prefer32Bit>false</Prefer32Bit>
     <RunCodeAnalysis>false</RunCodeAnalysis>
-    <CodeAnalysisRuleSet>MixedRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>SecurityRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -66,7 +66,7 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <StartupObject>KillTheMonster.Program</StartupObject>
+    <StartupObject>GhostBowling.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -91,17 +91,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KillMonsterForm.cs">
+    <Compile Include="GhostBowling.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KillMonsterForm.Designer.cs">
-      <DependentUpon>KillMonsterForm.cs</DependentUpon>
+    <Compile Include="GhostBowling.Designer.cs">
+      <DependentUpon>GhostBowling.cs</DependentUpon>
     </Compile>
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="KillMonsterForm.resx">
-      <DependentUpon>KillMonsterForm.cs</DependentUpon>
+    <EmbeddedResource Include="GhostBowling.resx">
+      <DependentUpon>GhostBowling.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

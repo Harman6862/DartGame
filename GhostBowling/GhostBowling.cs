@@ -3,10 +3,10 @@ using System.Drawing;
 using System.Media;
 using System.Windows.Forms;
 
-namespace KillTheMonster
+namespace GhostBowling
 {
     // KillMonsterForm class definition inheriting Form class
-    public partial class KillMonsterForm : Form
+    public partial class GhostBowling : Form
     {
         // Class Reference variables to be used
         // within below defined functions to access
@@ -17,7 +17,7 @@ namespace KillTheMonster
 
         // Contructor for initializing the Form
         // and assign object reference to Class variables
-        public KillMonsterForm()
+        public GhostBowling()
         {
             InitializeComponent();
             player = new Player();
