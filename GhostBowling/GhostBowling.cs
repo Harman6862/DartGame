@@ -30,19 +30,19 @@ namespace GhostBowling
         // before actual form load
         private void GhostBowlingForm_Load(object sender, EventArgs e)
         {
-            tryLuck.Enabled = false;           // disabled Spin Chambers button
+            tryLuck.Enabled = false;                // disabled Try Luck button
             playAgain.Enabled = false;              // disabled Play Again button
             bowl.Enabled = false;                   // disabled Bowl button
-            setTheBall.Enabled = true;              // enabled Load Bullet button
+            setTheBall.Enabled = true;              // enabled Set The Ball button
         }
 
         // This function generates a random number between 0-5 and passes to SetTheBall function
         // of Player class. Also, checks if the value is assigned or not via return type(true/false)
-        //  and plays sound for loading the bullet.
+        //  and plays sound for setting the ball.
         private void SetTheBall_Click(object sender, EventArgs e)
         {
-            setTheBall.Enabled = false;             // Once the Load Bullet button is clicked
-            tryLuck.Enabled = true;            // it gets disabled and rest other buttons
+            setTheBall.Enabled = false;             // Once Set The Ball button is clicked
+            tryLuck.Enabled = true;                 // it gets disabled and rest other buttons
             playAgain.Enabled = true;               // will be enabled
             bowl.Enabled = true;
             if (player.SetTheBall(random.Next(0, 6)) == false)         // Next function takes min and max(exclusive)
@@ -61,7 +61,7 @@ namespace GhostBowling
 
         // This function generates a random number between 0-5 and passes to TryLuck function
         // of Player class. Also, checks if the value is assigned or not via return type(true/false)
-        // and plays sound for spinning the chambers.
+        // and plays sound after setting the luck value.
         private void TryLuck_Click(object sender, EventArgs e)
         {
             if (player.TryLuck(random.Next(0, 6)) == false)                  // Message to be displayed if any error
@@ -74,8 +74,8 @@ namespace GhostBowling
             }
         }
 
-        // This function cross-checks the spin value and bullet position.
-        // If both are equal then the monster will be killed.
+        // This function cross-checks the ball position and luck value.
+        // If both are equal then all the ghosts will be gone.
         // Else the player loses a chance or be dead if no chances are left.
         // Calculation of total win/lose points and total score for overall game session.
         private void Bowl_Click(object sender, EventArgs e)
@@ -84,7 +84,7 @@ namespace GhostBowling
             if (player.chance == -3)                                        // Specific chance value -3 to be 
             {                                                               // checked for win case
                 soundPlayer.SoundLocation = @"Resource\GhostBowlingWinSound.wav";
-                soundPlayer.Play();                                         // Plays gun bullet fire sound.
+                soundPlayer.Play();                                         // Plays Bowling win sound.
                 win.Text = player.totalWins + "";                           // Sets win points on the win label.
                 pictureBox1.Image = Image.FromFile(@"Resource\GhostBowlingWin.jpg");
                 message.Text = "Whoa!!... You killed all the Ghosts...Wanna Play Again?";
@@ -94,7 +94,8 @@ namespace GhostBowling
             }
             else if (player.chance == 0)                                    // For Game lose case check chance
             {                                                               // value to be 0.
-                lose.Text = player.totalLoses + "";                           // Sets lose points on the lose label.
+                lose.Text = player.totalLoses + "";                         // Sets lose points on the lose label.
+                pictureBox1.Image = Image.FromFile(@"Resource\GhostBowlingNoChance.jpg");
                 message.Text = "You are dead... Click Play Again or close the window";
                 setTheBall.Enabled = false;
                 tryLuck.Enabled = false;
@@ -104,7 +105,7 @@ namespace GhostBowling
             }
             else                                                          // Remaining chance case where number of chance
             {                                                             // is still left for the player.
-                pictureBox1.Image = Image.FromFile(@"Resource\GhostBowling1Chance.jpg");
+                pictureBox1.Image = Image.FromFile(@"Resource\GhostBowlingLastChance.jpg");
                 soundPlayer.SoundLocation = @"Resource\BowlingSound.wav";
                 soundPlayer.Play();
                 message.Text = "You missed ..." + player.chance + " more chance left.."; // Displays number of chance left.
@@ -113,8 +114,8 @@ namespace GhostBowling
         }
 
         // This function resets the form components such as
-        // enabling only Load Bullet button and disabling the rest.
-        // Resets the welcome message and Monster image on 
+        // enabling only Set The Ball button and disabling the rest.
+        // Resets the welcome message and image on 
         // picture box.
         private void PlayAgain_Click(object sender, EventArgs e)
         {

@@ -8,8 +8,8 @@ namespace GhostBowling
         // private and internal access specifier for member variables
         // for having limited access to only current containing type Class
         //  & current assembly Classes
-        private int bulletPosition;
-        private int spinValue;
+        private int ballPosition;
+        private int luckValue;
         internal int totalScore;
         internal int totalWins;
         internal int totalLoses;
@@ -19,8 +19,8 @@ namespace GhostBowling
         // constructor for initializing default values
         public Player()
         {
-            bulletPosition = -1;
-            spinValue = -2;
+            ballPosition = -1;
+            luckValue = -2;
             chance = 2;
             totalScore = 0;
             totalWins = 0;
@@ -28,7 +28,7 @@ namespace GhostBowling
         }
 
         // Re-initializes chance with 2 for game reset events.
-        // Assigns random number between 0-5 to bulletPosition.
+        // Assigns random number between 0-5 to ballPosition.
         // Param - random, integer number from 0-5.
         // Return - Boolean, true if number is between 0 or 5; else false.
         public Boolean SetTheBall(int random)
@@ -36,28 +36,28 @@ namespace GhostBowling
             chance = 2;
             if (random < 0 || random > 5)
                 return false;
-            bulletPosition = random;
+            ballPosition = random;
             return true;
         }
 
-        // Assigns random number between 0-5 to spinValue.
+        // Assigns random number between 0-5 to luckValue.
         // Param - random, integer number from 0-5.
         // Return - Boolean, true if number is between 0 or 5; else false.
         public Boolean TryLuck(int random)
         {
             if (random < 0 || random > 5)
                 return false;
-            spinValue = random;
+            luckValue = random;
             return true;
         }
-        // Checks the spinValue and bulletPosition values.
+        // Checks the luckValue and ballPosition values.
         // If found equal, increments win points by 1,
         // total score by 10, assigns specific check value -3 to chance.
         // Else decrement chance by 1, and if no chance left(0)
         // increments lose points by 1.
         public void Bowl()
         {
-            if (spinValue == bulletPosition)
+            if (luckValue == ballPosition)
             {
                 totalWins++;
                 totalScore += 10;

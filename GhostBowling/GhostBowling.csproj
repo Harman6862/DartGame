@@ -198,7 +198,10 @@
     <Content Include="Resource\GhostBowling.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resource\GhostBowling1Chance.jpg">
+    <Content Include="Resource\GhostBowlingLastChance.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GhostBowlingNoChance.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resource\GhostBowlingSpookySound.wav">
