@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: NeutralResourcesLanguageAttribute("en-US")]
-[assembly: AssemblyTitle("KillTheMonster")]
+[assembly: AssemblyTitle("ZombieKill")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("KillTheMonster")]
+[assembly: AssemblyProduct("ZombieKill")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
